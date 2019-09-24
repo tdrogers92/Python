@@ -1,0 +1,20 @@
+<div class="content-section">
+    <form method="post" action="submit">
+        {{ form.hidden_tag() }}
+        <fieldset class="form-group">
+            <legend>Alfresco FTP Users</legend>
+            <br>
+            {% for field in form %}
+            <br>
+                {% if field.name != 'csrf_token' %}
+                    {% if field.name != 'submit' %}
+                        {{ field.label }}
+                        {{ field }}
+                    {% endif %}
+                {% endif %}
+            </br>
+            {% endfor %}
+            {{ form.submit() }}
+        </fieldset>
+    </form>
+</div>
